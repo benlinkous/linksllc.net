@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Links LLC — Digital Ecosystem & Community Portfolio</title>
+<meta name="description" content="Links LLC is a digital portfolio company operating 22 web properties across IT services, cybersecurity education, community media, commerce, and mission-driven initiatives. Based in Pulaski, Virginia." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#07080a;
+  --surface:#0d0f12;
+  --surface2:#12151a;
+  --surface3:#171b22;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.13);
+  --text:#f0f2f5;
+  --muted:#8a95a8;
+  --faint:#3a4255;
+  --accent:#c8a840;
+  --accent-dim:rgba(200,168,64,0.1);
+  --accent2:#4a9eff;
+  --accent2-dim:rgba(74,158,255,0.1);
+  --green:#22c55e;
+  --green-dim:rgba(34,197,94,0.1);
+  --sans:'DM Sans',sans-serif;
+  --display:'Syne',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1140px;margin:0 auto;padding:0 2rem;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,8,10,0.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+}
+.nav-brand{
+  font-family:var(--display);font-weight:800;font-size:1.1rem;
+  letter-spacing:-0.01em;color:var(--text);
+}
+.nav-brand em{color:var(--accent);font-style:normal;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{
+  font-family:var(--mono);font-size:0.6rem;font-weight:600;
+  letter-spacing:0.1em;background:var(--accent);color:#000;
+  padding:0.5rem 1.1rem;transition:opacity 0.15s;
+}
+.nav-cta:hover{opacity:0.85;}
+.nav-toggle{display:none;background:none;border:1px solid var(--border2);color:var(--text);padding:0.4rem 0.65rem;cursor:pointer;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;}
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:rgba(7,8,10,0.98);border-bottom:1px solid var(--border);padding:1rem 2rem;}
+  .nav-links.open{display:flex;}
+  .nav-links li{width:100%;padding:0.6rem 0;border-bottom:1px solid var(--border);}
+  .nav-links li:last-child{border-bottom:none;}
+}
+
+/* ── HERO ── */
+.hero{
+  padding:7rem 0 5rem;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%,rgba(200,168,64,0.06) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%,rgba(74,158,255,0.05) 0%,transparent 55%);
+}
+.hero-inner{position:relative;z-index:1;}
+.hero-label{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.25em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;
+}
+.hero-label::before{content:'';width:24px;height:1px;background:var(--accent);}
+.hero h1{
+  font-family:var(--display);font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:800;letter-spacing:-0.03em;line-height:1.05;
+  color:var(--text);margin-bottom:1.25rem;
+}
+.hero h1 em{color:var(--accent);font-style:normal;}
+.hero-sub{
+  font-size:1.1rem;font-weight:300;color:var(--muted);
+  max-width:560px;line-height:1.85;margin-bottom:2.5rem;
+}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem;}
+.btn-gold{
+  display:inline-block;background:var(--accent);color:#000;
+  font-family:var(--display);font-weight:700;font-size:0.9rem;
+  padding:0.85rem 1.75rem;transition:opacity 0.15s;
+}
+.btn-gold:hover{opacity:0.87;}
+.btn-ghost{
+  display:inline-block;background:transparent;color:var(--text);
+  font-family:var(--display);font-weight:600;font-size:0.9rem;
+  padding:0.85rem 1.75rem;border:1px solid var(--border2);
+  transition:border-color 0.15s;
+}
+.btn-ghost:hover{border-color:var(--accent);}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--border);
+  background:var(--surface);
+}
+.hero-stat{
+  padding:1.5rem;border-right:1px solid var(--border);text-align:center;
+}
+.hero-stat:last-child{border-right:none;}
+.stat-n{
+  font-family:var(--display);font-size:2.2rem;font-weight:800;
+  color:var(--accent);line-height:1;margin-bottom:0.3rem;
+}
+.stat-l{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+
+/* ── ABOUT ── */
+.about-section{padding:5rem 0;border-bottom:1px solid var(--border);}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;}
+.eyebrow{
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;
+}
+h2{
+  font-family:var(--display);font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:800;letter-spacing:-0.02em;color:var(--text);
+  margin-bottom:1rem;line-height:1.1;
+}
+.about-text p{font-size:0.975rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;}
+.about-text p strong{color:var(--text);}
+.about-values{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.value-item{
+  background:var(--surface);padding:1.25rem 1.5rem;
+  display:flex;gap:1rem;align-items:flex-start;transition:background 0.15s;
+}
+.value-item:hover{background:var(--surface2);}
+.value-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
+.value-name{font-family:var(--display);font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.2rem;}
+.value-desc{font-size:0.8rem;color:var(--muted);line-height:1.6;}
+
+/* ── DIVISIONS ── */
+.divisions-section{padding:5rem 0;border-bottom:1px solid var(--border);}
+.division{margin-bottom:3rem;}
+.division:last-child{margin-bottom:0;}
+.division-header{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.5rem;background:var(--surface);
+  border:1px solid var(--border);border-left:3px solid var(--accent);
+  margin-bottom:1px;
+}
+.division-icon{font-size:1.1rem;}
+.division-name{
+  font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text);
+}
+.division-desc{font-size:0.8rem;color:var(--muted);margin-left:auto;}
+.sites-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.site-card{
+  background:var(--surface2);padding:1.25rem 1.5rem;
+  transition:background 0.15s;
+}
+.site-card:hover{background:var(--surface3);}
+.site-domain{
+  font-family:var(--mono);font-size:0.78rem;font-weight:600;
+  color:var(--accent2);margin-bottom:0.3rem;
+}
+.site-name{font-family:var(--display);font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;}
+.site-desc{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+.site-status{
+  display:inline-block;margin-top:0.6rem;
+  font-family:var(--mono);font-size:0.5rem;letter-spacing:0.12em;
+  text-transform:uppercase;padding:0.18rem 0.5rem;
+}
+.status-live{background:var(--green-dim);color:var(--green);border:1px solid rgba(34,197,94,0.2);}
+.status-building{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(200,168,64,0.2);}
+
+/* ── LEADERSHIP ── */
+.leadership-section{
+  padding:5rem 0;border-bottom:1px solid var(--border);
+  background:var(--surface);
+}
+.leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem;}
+.leader-card{background:var(--bg);border:1px solid var(--border);padding:2.5rem;}
+.leader-name{
+  font-family:var(--display);font-size:1.6rem;font-weight:800;
+  color:var(--text);margin-bottom:0.25rem;letter-spacing:-0.01em;
+}
+.leader-title{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;
+}
+.leader-bio p{font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:0.75rem;}
+.leader-bio p strong{color:var(--text);}
+.leader-links{display:flex;flex-direction:column;gap:0;margin-top:1.5rem;}
+.leader-link{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.6rem 0;border-bottom:1px solid var(--border);
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;
+}
+.leader-link:last-child{border-bottom:none;}
+.ll-label{color:var(--faint);text-transform:uppercase;}
+.ll-val{color:var(--accent2);transition:color 0.15s;}
+.ll-val:hover{color:var(--text);}
+.mission-block{
+  background:var(--bg);border:1px solid var(--border);
+  padding:2.5rem;
+}
+.mission-block h3{
+  font-family:var(--display);font-size:1.2rem;font-weight:700;
+  color:var(--text);margin-bottom:1.25rem;
+}
+.mission-items{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.mission-item{
+  background:var(--surface2);padding:1rem 1.25rem;
+  font-size:0.85rem;color:var(--muted);line-height:1.6;
+  display:flex;gap:0.75rem;align-items:flex-start;
+}
+.mission-dot{color:var(--accent);flex-shrink:0;margin-top:2px;}
+
+/* ── CONTACT ── */
+.contact-section{padding:5rem 0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;}
+.contact-block{background:var(--surface);border:1px solid var(--border);padding:2rem;}
+.contact-block h3{
+  font-family:var(--display);font-size:1rem;font-weight:700;
+  color:var(--text);margin-bottom:1.25rem;
+  padding-bottom:0.75rem;border-bottom:1px solid var(--border);
+}
+.contact-list{display:flex;flex-direction:column;gap:0;}
+.contact-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.65rem 0;border-bottom:1px solid var(--border);
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;
+}
+.contact-item:last-child{border-bottom:none;}
+.ci-label{color:var(--faint);text-transform:uppercase;}
+.ci-val{color:var(--text);transition:color 0.15s;}
+.ci-val:hover{color:var(--accent);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--surface);border-top:2px solid var(--accent);
+  padding:2rem;
+}
+.footer-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+}
+.footer-brand{font-family:var(--display);font-weight:800;font-size:1rem;color:var(--text);}
+.footer-brand em{color:var(--accent);font-style:normal;}
+.footer-copy{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.6s,transform 0.6s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .about-grid,.leadership-grid,.contact-grid{grid-template-columns:1fr;gap:2rem;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .hero-stat:nth-child(2){border-right:none;}
+  .hero-stat:nth-child(3){border-top:1px solid var(--border);}
+  .sites-grid{grid-template-columns:1fr 1fr;}
+  .hero{padding:5rem 0 3.5rem;}
+  .about-section,.divisions-section,.leadership-section,.contact-section{padding:3.5rem 0;}
+  footer{padding:1.5rem;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .division-desc{display:none;}
+}
+@media(max-width:560px){.sites-grid,.hero-stats{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand"><em>Links</em> LLC</div>
+  <button class="nav-toggle" id="navToggle">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#divisions">Portfolio</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://nrvmanagedit.com" target="_blank" rel="noopener" class="nav-cta">NRV Managed IT</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-label">Pulaski, Virginia · New River Valley</div>
+      <h1>A Digital Ecosystem<br>Built to <em>Make a Difference</em></h1>
+      <p class="hero-sub">Links LLC operates a portfolio of 22 web properties across IT services, cybersecurity education, community media, STEM education, commerce, and mission-driven initiatives. <strong>Every property serves a purpose.</strong></p>
+      <div class="hero-actions">
+        <a href="#divisions" class="btn-gold">View the Portfolio</a>
+        <a href="#about" class="btn-ghost">About Links LLC</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="stat-n">22</div><div class="stat-l">Web Properties</div></div>
+        <div class="hero-stat"><div class="stat-n">6</div><div class="stat-l">Business Divisions</div></div>
+        <div class="hero-stat"><div class="stat-n">1</div><div class="stat-l">Mission: Make a Difference</div></div>
+        <div class="hero-stat"><div class="stat-n">NRV</div><div class="stat-l">New River Valley, VA</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <div class="eyebrow">About Links LLC</div>
+        <h2>Built to Connect. Designed to Last.</h2>
+        <p>Links LLC is a digital portfolio company based in Pulaski, Virginia — in the heart of the New River Valley. Founded and operated by Ben Linkous, a retired Army Master Sergeant, the company manages 22 web properties spanning managed IT services, cybersecurity education, community journalism, STEM education, commerce, and personal mission work.</p>
+        <p>The name reflects the core purpose: <strong>connecting things that are often kept separate.</strong> Technology and community. Education and service. Local business and digital reach. Veterans and civilian opportunity.</p>
+        <p>Every property in the Links ecosystem exists for a reason — either to generate the revenue that funds the mission, or to be part of the mission itself. <strong>The financial engine funds the heart.</strong></p>
+      </div>
+      <div class="about-values">
+        <div class="value-item">
+          <span class="value-icon">🎯</span>
+          <div>
+            <div class="value-name">Mission First</div>
+            <div class="value-desc">The goal is to make a difference and have fun doing it. Revenue is the tool, not the purpose.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🏘️</span>
+          <div>
+            <div class="value-name">Community Rooted</div>
+            <div class="value-desc">The NRV is home. Every business decision asks: does this serve the people here?</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🎖️</span>
+          <div>
+            <div class="value-name">Service Mindset</div>
+            <div class="value-desc">Thirty years of military service shaped a bias toward action, accountability, and showing up.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🔗</span>
+          <div>
+            <div class="value-name">Connection as Strategy</div>
+            <div class="value-desc">The 22 properties aren't isolated — they reinforce each other, share audiences, and serve a unified ecosystem.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🔒</span>
+          <div>
+            <div class="value-name">Privacy & Integrity</div>
+            <div class="value-desc">No ads, no data selling, no hidden agendas. Every site operates with full transparency about what it is and who runs it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO DIVISIONS -->
+<section class="divisions-section" id="divisions">
+  <div class="container">
+    <div class="eyebrow reveal">Portfolio</div>
+    <h2 class="reveal">22 Properties. 6 Divisions.</h2>
+
+    <!-- IT Services -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">💼</span>
+        <span class="division-name">IT Services</span>
+        <span class="division-desc">The financial engine of the ecosystem</div>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">nrvmanagedit.com</div>
+          <div class="site-name">NRV Managed IT</div>
+          <div class="site-desc">Managed IT services and cybersecurity for small businesses in the New River Valley. $35/endpoint/month, no contracts.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">linksmanagedit.com</div>
+          <div class="site-name">Links Managed IT</div>
+          <div class="site-desc">Broader managed IT brand — expanding the service footprint beyond the NRV.</div>
+          <span class="site-status status-building">Building</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">allthingslink.store</div>
+          <div class="site-name">All Things Link Store</div>
+          <div class="site-desc">Central digital storefront for the ecosystem. Templates, guides, and resources from across all properties.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cybersecurity & Education -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">🛡️</span>
+        <span class="division-name">Cybersecurity & Linux Education</span>
+        <span class="division-desc">Free pathways from zero to job-ready</span>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">link2cyber.com</div>
+          <div class="site-name">Link2Cyber</div>
+          <div class="site-desc">Free 80-day cybersecurity bootcamp. Zero to CompTIA SecurityX using TryHackMe and LinksOS.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">linksos.org</div>
+          <div class="site-name">LinksOS</div>
+          <div class="site-desc">Structured Debian learning environment. Start with nothing — build your own security setup from the ground up.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">link2linux.com</div>
+          <div class="site-name">Link2Linux</div>
+          <div class="site-desc">Linux distro reviews, ways to run Linux, and CompTIA Linux+ cert prep.</div>
+          <span class="site-status status-building">Building</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">⚡</span>
+        <span class="division-name">Technology & STEM Education</span>
+        <span class="division-desc">Tech for everyone — kids to career changers</span>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">link2it.io</div>
+          <div class="site-name">Link2IT</div>
+          <div class="site-desc">Technology for non-programmers. AI-assisted coding, web dev, app dev, and AI for business.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">stemkidz.biz</div>
+          <div class="site-name">STEMKidz</div>
+          <div class="site-desc">Tech STEM for kids K-12 and lifelong learners. Coding, drones, rocketry, and Minecraft Education.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">steamkidz.biz</div>
+          <div class="site-name">STEAMKidz</div>
+          <div class="site-desc">STEAM learning — adding Arts to the equation. Creative and technical thinking together.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">link2stem.com</div>
+          <div class="site-name">Link2STEM</div>
+          <div class="site-desc">Broader STEM pathway hub — resources and pathways for students, families, and educators.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">link2steam.com</div>
+          <div class="site-name">Link2STEAM</div>
+          <div class="site-desc">STEAM pathway — where creativity meets technology. Includes STEMKidz content.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community & Civic -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">🏘️</span>
+        <span class="division-name">Community & Civic</span>
+        <span class="division-desc">Local voice, civic action, regional pride</span>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">callmelink.org</div>
+          <div class="site-name">Call Me Link</div>
+          <div class="site-desc">Civic writing from Pulaski, Virginia — community, politics, and the work of showing up.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">linksnrv.com</div>
+          <div class="site-name">LinksNRV</div>
+          <div class="site-desc">Local life in the New River Valley — Mom & Pop stores, farm-to-table, restaurants, and community.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">missionhonor.org</div>
+          <div class="site-name">Mission: Honor</div>
+          <div class="site-desc">Honoring the fallen and supporting Gold Star families. Remembrance, legacy, and service.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">linkspulaski.com</div>
+          <div class="site-name">Links Pulaski</div>
+          <div class="site-desc">Dedicated community hub for Pulaski, Virginia — the town at the heart of the ecosystem.</div>
+          <span class="site-status status-building">Building</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">linksswva.com</div>
+          <div class="site-name">Links Southwest Virginia</div>
+          <div class="site-desc">Regional hub for Southwest Virginia — expanding the community footprint beyond the NRV.</div>
+          <span class="site-status status-building">Building</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commerce -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">🛍️</span>
+        <span class="division-name">Commerce</span>
+        <span class="division-desc">Curated local and digital products</span>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">alysons.boutique</div>
+          <div class="site-name">Alyson's Boutique</div>
+          <div class="site-desc">Curated rustic boutique — local NRV makers, artisans, and vendors. Fashion and home goods with heart.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">reftribe.com</div>
+          <div class="site-name">Ref Tribe</div>
+          <div class="site-desc">Community and resources for sports officials — referees, umpires, and the ref community.</div>
+          <span class="site-status status-building">Building</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal & Mission -->
+    <div class="division reveal">
+      <div class="division-header">
+        <span class="division-icon">🎖️</span>
+        <span class="division-name">Personal & Mission</span>
+        <span class="division-desc">The story and the people behind the work</span>
+      </div>
+      <div class="sites-grid">
+        <div class="site-card">
+          <div class="site-domain">benlinkous.com</div>
+          <div class="site-name">Ben Linkous</div>
+          <div class="site-desc">The personal hub connecting all 22 properties — the man, the mission, and the story behind Links LLC.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">unfinisheddreams.blog</div>
+          <div class="site-name">Unfinished Dreams</div>
+          <div class="site-desc">A memoir in progress — honoring legacy, memory, and the dreams of those who left too soon.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+        <div class="site-card">
+          <div class="site-domain">fitnesstest.army</div>
+          <div class="site-name">AFT Calculator</div>
+          <div class="site-desc">Official 2025 Army Fitness Test score calculator — for active duty, veterans, pre-basic, JROTC, and civilians.</div>
+          <span class="site-status status-live">Live</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership-section" id="leadership">
+  <div class="container">
+    <div class="eyebrow reveal">Leadership</div>
+    <h2 class="reveal">The Person Behind the Portfolio</h2>
+    <div class="leadership-grid reveal">
+      <div class="leader-card">
+        <div class="leader-name">Ben Linkous</div>
+        <div class="leader-title">Founder & Principal · Links LLC</div>
+        <div class="leader-bio">
+          <p>Retired Army <strong>Master Sergeant</strong> with nearly 30 years of service. Ben grew up in Pulaski, Virginia, left to serve, and came back. He serves on the Pulaski Planning Commission and is building the Links ecosystem as both a business and a civic project.</p>
+          <p>After retiring from the military, Ben transitioned into technology, cybersecurity, and education — building 22 websites with no formal computer science background, using AI as a co-pilot. The story of that process lives at link2it.io.</p>
+          <p>The goal, in his own words: <strong>"Make a difference and have fun."</strong> The MSP funds the mission. The mission is the rest of it.</p>
+        </div>
+        <div class="leader-links">
+          <div class="leader-link"><span class="ll-label">Website</span><a href="https://benlinkous.com" target="_blank" rel="noopener" class="ll-val">benlinkous.com</a></div>
+          <div class="leader-link"><span class="ll-label">Substack</span><a href="https://substack.com/@callmelink" target="_blank" rel="noopener" class="ll-val">@callmelink</a></div>
+          <div class="leader-link"><span class="ll-label">LinkedIn</span><a href="https://linkedin.com/in/benlinkous" target="_blank" rel="noopener" class="ll-val">benlinkous</a></div>
+          <div class="leader-link"><span class="ll-label">GitHub</span><a href="https://github.com/benlinkous" target="_blank" rel="noopener" class="ll-val">benlinkous</a></div>
+        </div>
+      </div>
+      <div class="mission-block">
+        <h3>The Mission Behind the Business</h3>
+        <div class="mission-items">
+          <div class="mission-item"><span class="mission-dot">→</span>Provide affordable managed IT to NRV small businesses who can't afford enterprise solutions</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Give away free cybersecurity education to anyone willing to do the work</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Document and celebrate the New River Valley through honest local journalism</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Honor the fallen and support Gold Star families through Mission: Honor</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Make STEM and tech accessible to every kid in the NRV — regardless of background</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Demonstrate that AI makes technology accessible to anyone willing to learn</div>
+          <div class="mission-item"><span class="mission-dot">→</span>Carry forward the unfinished dreams of those who left too soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Get in Touch</h2>
+    <div class="contact-grid reveal">
+      <div class="contact-block">
+        <h3>Business Inquiries</h3>
+        <div class="contact-list">
+          <div class="contact-item"><span class="ci-label">IT Services</span><a href="https://nrvmanagedit.com" target="_blank" rel="noopener" class="ci-val">nrvmanagedit.com</a></div>
+          <div class="contact-item"><span class="ci-label">General Email</span><a href="mailto:callmelink@benlinkous.com" class="ci-val">callmelink@benlinkous.com</a></div>
+          <div class="contact-item"><span class="ci-label">IT Email</span><a href="mailto:benlinkous@nrvmanagedit.com" class="ci-val">benlinkous@nrvmanagedit.com</a></div>
+          <div class="contact-item"><span class="ci-label">LinkedIn</span><a href="https://linkedin.com/in/benlinkous" target="_blank" rel="noopener" class="ci-val">benlinkous</a></div>
+          <div class="contact-item"><span class="ci-label">Location</span><span class="ci-val">Pulaski, Virginia · NRV</span></div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <h3>Follow the Work</h3>
+        <div class="contact-list">
+          <div class="contact-item"><span class="ci-label">Substack</span><a href="https://substack.com/@callmelink" target="_blank" rel="noopener" class="ci-val">@callmelink</a></div>
+          <div class="contact-item"><span class="ci-label">Threads</span><a href="https://threads.net/@benlinkous76" target="_blank" rel="noopener" class="ci-val">@benlinkous76</a></div>
+          <div class="contact-item"><span class="ci-label">Instagram</span><a href="https://instagram.com/benlinkous.76" target="_blank" rel="noopener" class="ci-val">benlinkous.76</a></div>
+          <div class="contact-item"><span class="ci-label">Facebook</span><a href="https://facebook.com/ben.linkous.92" target="_blank" rel="noopener" class="ci-val">ben.linkous.92</a></div>
+          <div class="contact-item"><span class="ci-label">GitHub</span><a href="https://github.com/benlinkous" target="_blank" rel="noopener" class="ci-val">benlinkous</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><em>Links</em> LLC</div>
+    <div class="footer-copy">© <span id="yr"></span> Links LLC · Pulaski, Virginia · New River Valley</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('navToggle').addEventListener('click',function(){
+  const n=document.getElementById('navLinks');
+  n.classList.toggle('open');
+  this.textContent=n.classList.contains('open')?'Close':'Menu';
+});
+const obs=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
